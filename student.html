@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>SmartPoll</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body class="home">
+  <header id="top-content">
+    <div class="header-title">
+      <div id="top-shadow"></div>
+      <div class="container text-center">
+        <div id="home-title"><span class="strong">Smart</span><span class="satisfy">Poll</span></div>
+        <div id="home-subtitle">Interactive Q&A</div>
+      </div>
+    </div>
+  </header>
+
+  <form name="form" id="form" button=>
+  <label for="Question">Question: </label>
+  <input type="text" id="Question" name="Question"/>
+  <!--<label for="Topic">Topic: </label>
+  <input type="text" name="Topic"/>
+  <label for="Name">Name: </label>
+  <input type="text" name="Name"/>-->
+  </form>
+  <button type="submit" form="form" onclick="addQuestion(); this.reset();" value="Submit">Submit Question</button>
+
+  <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap-modal.min.js"></script>
+  <script>
+  function addQuestion() {
+    var SmartPoll = new Firebase('https://smartpoll.firebaseio.com');
+    var generalUser = SmartPoll.child("BaseQuestion");
+    var ques = document.getElementById("Question").value;
+    generalUser.push({
+      Question: ques
+    });
+    document.getElementById("form").reset();
+  }
+  </script>
+</body>
+</html>
