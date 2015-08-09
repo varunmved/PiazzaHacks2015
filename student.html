@@ -43,5 +43,18 @@
     document.getElementById("form").reset();
   }
   </script>
+  <div class="question-box">
+  <ul>
+  <li><script>
+  var SmartPoll = new Firebase('https://smartpoll.firebaseio.com');
+  SmartPoll.on("value", function(snapshot) {
+  console.log(snapshot.val().Question);
+}); 
+</script></li>
+  <li></li>
+  <li></li>
+</ul>
+</div>
+
 </body>
 </html>

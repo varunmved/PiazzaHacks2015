@@ -4,8 +4,9 @@
 -------------------------------------------------- */
 body {
   font: 14.5px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#777;
+  color:black;
   font-weight:300;
+background-color: #2883C6;
 }
 
 a {
@@ -166,6 +167,16 @@ header {
   top:1px;
 }
 
+.question-box {
+opacity: 0.48;
+background: #000000;
+box-shadow: inset 0px 1px 3px 13px rgba(42,41,41,0.50);
+border-radius: 12px;
+font-family: .HelveticaNeueDeskInterface-Regular;
+font-size: 24px;
+color: #FFFFFF;
+line-height: 28px;
+}
 
 /* Footer
 -------------------------------------------------- */
@@ -175,7 +186,21 @@ footer {
   margin-top: 50px;
   height: 200px;
   margin: 0 auto;
-  position: relative;
+  position: relative;/* Rectangle 8: */
+background: rgba(3,84,158,0.50);
+box-shadow: inset 0px 1px 3px 4px rgba(0,0,0,0.50);
+
+
+/* Rectangle 8 Copy: */
+background: rgba(2,82,158,0.75);
+box-shadow: inset 0px 1px 3px 4px rgba(0,0,0,0.50);
+
+
+/* Smart Poll: */
+font-family: CopperplateGothic-Bold;
+font-size: 36px;
+color: #1890FF;
+line-height: 40px;
 }
 
 #footer-links {
