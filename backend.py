@@ -24,6 +24,7 @@ firebase = firebase.FirebaseApplication('https://smartpoll.firebaseio.com/', Non
 #         putIntoFirebaseQuestionVote(Question,ThumbsDown)
 
 
+
 #method for putting in a new question
 def putIntoFirebaseNoUserQuestion(simpleQ):
     res = firebase.post('/BaseQuestion', simpleQ)
@@ -51,7 +52,6 @@ def putIntoFirebaseAnswerQuestion(Question,ID,Answer):
     res = ""
     #res = '/' + Question +'/'+ ID+'/Vote'
     res = "Question" + '/'+ ID;
-
     print(res)
 
     firebase.put(res,"Answer",Answer)
@@ -63,7 +63,15 @@ def putIntoFirebaseQuestionVote(Question, ThumbsDown):
     print(res)
     firebase.put(res,"voteVal",ThumbsDown)
 
+def redisInit():
+    r = redis.StrictRedis(host='localhost', port=6379, db=0)
+    r.set('Question','Are the best things in life free?')
+    res = r.get('Question')
+    print(res)
+
 def getFirebaseForNLTK():
+    print("ayylmao")
+
 
 
 def applyNLTK(strIn):
@@ -106,7 +114,7 @@ ans2 = "2+3 = 5"
 
 idout1 =putIntoFirebaseQuestion(q1)
 putIntoFirebaseAnswerQuestion(q1,idout1,ans1)
-
+redisInit()
 
 
 
