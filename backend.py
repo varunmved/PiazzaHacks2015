@@ -14,6 +14,8 @@ s=set(stopwords.words('english'))
 requests.packages.urllib3.disable_warnings()
 
 firebase = firebase.FirebaseApplication('https://smartpoll.firebaseio.com/', None)
+r = redis.StrictRedis(host='localhost', port=6379, db=0)
+
 
 # def decideThumbs(Question,voteVal):
 #     if voteVal > 0 :
@@ -53,7 +55,6 @@ def putIntoFirebaseAnswerQuestion(Question,ID,Answer):
     #res = '/' + Question +'/'+ ID+'/Vote'
     res = "Question" + '/'+ ID;
     print(res)
-
     firebase.put(res,"Answer",Answer)
 
 #method for putting in a thumbs down
@@ -63,11 +64,10 @@ def putIntoFirebaseQuestionVote(Question, ThumbsDown):
     print(res)
     firebase.put(res,"voteVal",ThumbsDown)
 
-def redisInit():
-    r = redis.StrictRedis(host='localhost', port=6379, db=0)
-    r.set('Question','Are the best things in life free?')
-    res = r.get('Question')
-    print(res)
+def redisInit(id,Question):
+    r.set(id,Question)
+    #res = r.get('Question')
+    #print(res)
 
 def getFirebaseForNLTK():
     print("ayylmao")
@@ -114,7 +114,9 @@ ans2 = "2+3 = 5"
 
 idout1 =putIntoFirebaseQuestion(q1)
 putIntoFirebaseAnswerQuestion(q1,idout1,ans1)
-redisInit()
+redisInit(idout1,q1)
+
+#redisInit()
 
 
 

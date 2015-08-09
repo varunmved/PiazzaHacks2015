@@ -9,9 +9,11 @@ firebase2 = firebase.FirebaseApplication('https://redistrial.firebaseio.com/', N
 r = redis.StrictRedis(host='localhost', port=6379, db=0)
 
 def redisInit():
+    res = ""
     while res != None:
-        result = firebase1.get('/Question',None)
-        r.rpush("name",result)
+        res = firebase1.get('/Question',)
+        print(res)
+        r.set("name",res)
     #pipe = r.pipeline()
     # r.rpush('name','varun')
     # r.rpush('name','aniket')

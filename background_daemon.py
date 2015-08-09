@@ -5,32 +5,32 @@ requests.packages.urllib3.disable_warnings()
 
 
 def pushToFireBaseBulk(questionData):
-    fire.putIntoFirebaseCarBattery_Level(carData['Battery_Level'])
-    fire.putIntoFirebaseCarHonk_State(carData['Honk_State'])
-    fire.putIntoFirebaseCarFuel_Consumption(carData['Fuel_Consumption'])
-    fire.putIntoFirebaseCarAccelerator_Pedal(carData['Accelerator_Pedal'])
-    fire.putIntoFirebaseCarInside_Temperature(carData['Inside_Temperature'])
-    fire.putIntoFirebaseCarFuel_Level(carData['Fuel_Level'])
-    fire.putIntoFirebaseCarOutside_Air_Temperature(carData['Outside_Air_Temperature'])
-    fire.putIntoFirebaseCarOdometer(carData['Odometer'])
-
-    fire.putIntoFirebaseCarDoor_State_Front_Left(carData['Door_State_Front_Left'])
-    fire.putIntoFirebaseCarDoor_State_Front_Right(carData['Door_State_Front_Right'])
-    fire.putIntoFirebaseCarDoor_State_Rear_Left(carData['Door_State_Rear_Left'])
-    fire.putIntoFirebaseCarDoor_State_Rear_Right(carData['Door_State_Rear_Right'])
-
-
-    fire.putIntoFirebaseCarTire_Pressure_Front_Left(carData['Tire_Pressure_Front_Left'])
-    fire.putIntoFirebaseCarTire_Pressure_Front_Right(carData['Tire_Pressure_Front_Right'])
-    fire.putIntoFirebaseCarTire_Pressure_Rear_Left(carData['Tire_Pressure_Rear_Left'])
-    fire.putIntoFirebaseCarTire_Pressure_Rear_Right(carData['Tire_Pressure_Rear_Right'])
-
-
-    fire.putIntoFirebaseCarTimestamp(carData['Timestamp'])
-    fire.putIntoFirebaseCarFuel_Level_Critical(carData['Fuel_Level_Critical'])
-    fire.putIntoFirebaseCarVehicle_Speed(carData['Vehicle_Speed'])
-    fire.putIntoFirebaseCarIgnition_State(carData['Turn_Indicator_State'])
-    fire.putIntoFirebaseCarTurn_Indicator_State(carData['Turn_Indicator_State'])
+    # fire.putIntoFirebaseCarBattery_Level(carData['Battery_Level'])
+    # fire.putIntoFirebaseCarHonk_State(carData['Honk_State'])
+    # fire.putIntoFirebaseCarFuel_Consumption(carData['Fuel_Consumption'])
+    # fire.putIntoFirebaseCarAccelerator_Pedal(carData['Accelerator_Pedal'])
+    # fire.putIntoFirebaseCarInside_Temperature(carData['Inside_Temperature'])
+    # fire.putIntoFirebaseCarFuel_Level(carData['Fuel_Level'])
+    # fire.putIntoFirebaseCarOutside_Air_Temperature(carData['Outside_Air_Temperature'])
+    # fire.putIntoFirebaseCarOdometer(carData['Odometer'])
+    #
+    # fire.putIntoFirebaseCarDoor_State_Front_Left(carData['Door_State_Front_Left'])
+    # fire.putIntoFirebaseCarDoor_State_Front_Right(carData['Door_State_Front_Right'])
+    # fire.putIntoFirebaseCarDoor_State_Rear_Left(carData['Door_State_Rear_Left'])
+    # fire.putIntoFirebaseCarDoor_State_Rear_Right(carData['Door_State_Rear_Right'])
+    #
+    #
+    # fire.putIntoFirebaseCarTire_Pressure_Front_Left(carData['Tire_Pressure_Front_Left'])
+    # fire.putIntoFirebaseCarTire_Pressure_Front_Right(carData['Tire_Pressure_Front_Right'])
+    # fire.putIntoFirebaseCarTire_Pressure_Rear_Left(carData['Tire_Pressure_Rear_Left'])
+    # fire.putIntoFirebaseCarTire_Pressure_Rear_Right(carData['Tire_Pressure_Rear_Right'])
+    #
+    #
+    # fire.putIntoFirebaseCarTimestamp(carData['Timestamp'])
+    # fire.putIntoFirebaseCarFuel_Level_Critical(carData['Fuel_Level_Critical'])
+    # fire.putIntoFirebaseCarVehicle_Speed(carData['Vehicle_Speed'])
+    # fire.putIntoFirebaseCarIgnition_State(carData['Turn_Indicator_State'])
+    # fire.putIntoFirebaseCarTurn_Indicator_State(carData['Turn_Indicator_State'])
 
     fire.putIntoFirebaseQuestion(questionData)
 class background_daemon(object):
